@@ -11,11 +11,11 @@ After the user input the code takes upto 2-3 mins to generate the disparity and 
 ## Notes
 ### Calibration:
 1) The matching feature points are found using SIFT.
-2) The estimation of fundamental matrix is done as follows:
-a) First the points are normalized such that the points have (2)**(0.5) as mean distance from the mean or centroid of the points.
-b) After forming the A matrix the solution is computed by applying SVD to this A matrix which gives us the fundamental matrix.
-c) To enforce the condition of rank(2) of the fundamental matrix we compute the SVD of the fundamental matrix and then set the smallest singular value to zero. The error occurs because of the error in the matching feature points.
-d) Once the rank(2) constraint is done the fundamental matrix is rebuilt and then unnormalized.
+2) The estimation of fundamental matrix is done as follows:\
+  a) First the points are normalized such that the points have (2)**(0.5) as mean distance from the mean or centroid of the points.\
+  b) After forming the A matrix the solution is computed by applying SVD to this A matrix which gives us the fundamental matrix.\
+  c) To enforce the condition of rank(2) of the fundamental matrix we compute the SVD of the fundamental matrix and then set the smallest singular value to      zero. The error occurs because of the error in the matching feature points.\
+  d) Once the rank(2) constraint is done the fundamental matrix is rebuilt and then unnormalized.
 3) The process in point 2 is done iteratively using the RANSAC function to obtain the fundamental matrix that is not bothered by any outliers in the matching feature points.
 4) To obtain the rotation and translation matrix and vector we need to compute the essential matrix first.
 5) The essential matrix is then decomposed to obtain 4 possible combinations of rotation and translation.
