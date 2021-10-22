@@ -8,6 +8,12 @@ Make sure to download the data required to run the code and save it in the same 
 The code will first rectify the images and ask for user input whether the epipolar lines are aligned or not.
 After the user input the code takes upto 2-3 mins to generate the disparity and the depth map.
 
+
+## Libraries Required
+* Numpy
+* OpenCV
+* matplotlib
+
 ## Notes
 ### Calibration:
 1) The matching feature points are found using SIFT.
